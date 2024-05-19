@@ -153,7 +153,8 @@ def submit_app(config, logger):
         service_log_path = "chromedriver.log"
         service_args = ["--verbose"]
         driver = webdriver.Chrome(
-            service=Service(executable_path=config["chromedriver_path"]),
+            # service=Service(executable_path=config["chromedriver_path"]),
+            service=Service(executable_path="chromedriver.exe"),
             options=chrome_options,
             service_args=service_args,
             service_log_path=service_log_path,
