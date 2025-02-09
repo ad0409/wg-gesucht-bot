@@ -21,7 +21,7 @@ pip install -r requirements.txt
 playwright install
 ```
 
-### 2 Ensure `chromedriver` and `google-chrome`are installed
+### 2 Ensure `chromedriver` and `google-chrome` are installed
 
 ```bash
 google-chrome --version
