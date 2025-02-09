@@ -62,7 +62,7 @@ You also need to enter the `url`. Just go to `wg-gesucht.de`, enter all your fil
 
 ### 4 Write message into `message_de.txt` and `message_en.txt`
 
-Make sure you use the format of `Hello receipient`. Since the code automatically replaces `receipient` with the name of the user.
+Make sure you use the format of `Hello recipient`. Since the code automatically replaces `recipient` with the name of the user.
 
 ### 5 Finally, simply run:
 

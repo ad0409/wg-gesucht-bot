@@ -28,6 +28,7 @@ def get_element(driver, by, id):
     try:
         wait = WebDriverWait(driver, 10, poll_frequency=1)
         element = wait.until(EC.visibility_of_element_located((by, id)))
+        print(f"Suche nach Element: {id}")
     except TimeoutException:
         wait = WebDriverWait(driver, 30, poll_frequency=1)
         element = wait.until(EC.presence_of_element_located((by, id)))
@@ -253,7 +254,7 @@ def submit_app(config, logger):
     try:
         with open(message_file, "r") as file:
             message = str(file.read())
-        message = message.replace("receipient", config["user_name"].split(" ")[0])
+        message = message.replace("recipient", config["user_name"].split(" ")[0])
         # if "keyword" in locals() and keyword != "":
         #     message = f"{keyword}\n\n" + message
         text_area.send_keys(message)
@@ -268,7 +269,7 @@ def submit_app(config, logger):
         click_button(
             driver,
             By.XPATH,
-            "//button[@data-ng-click='submit()' or contains(.,'Nachricht senden')]",
+            "//button[@data-ng-click='submit()' or contains(.,'Senden')]",
         )
         logger.info(f">>>> Message sent to: {config['ref']} <<<<")
         time.sleep(2)
