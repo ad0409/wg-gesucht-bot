@@ -21,11 +21,36 @@ pip install -r requirements.txt
 playwright install
 ```
 
-### 2 Ensure `chromedriver` is installed
+### 2 Ensure `chromedriver` and `google-chrome`are installed
 
-Running `which chromedriver` should return a path like `/usr/bin/chromedriver`.
+```bash
+google-chrome --version
+chromedriver --version
+```
 
-If not simply check this website: https://chromedriver.chromium.org/downloads
+Both should provide an output. If not:
+
+#### google-chrome
+
+In case `google-chrome` is missing, run
+
+```bash
+wget -O google-chrome.deb "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb"
+sudo apt install ./google-chrome.deb -y
+```
+#### chromedriver
+
+In case `chromedriver` is missing, [find the latest available cross-platform Chrome for Testing here](https://googlechromelabs.github.io/chrome-for-testing/). Download the linux folder, unpack it and copy the `chromedriver`file to /usr/bin.
+
+Ensure that `chromdriver` can get executed with
+
+```bash
+sudo chmod +x /usr/bin/chromedriver
+```
+
+Running `which chromedriver` should now return a path `/usr/bin/chromedriver`.
+
+More info: https://chromedriver.chromium.org/downloads
 
 Note: Ensure that your Chrome version matches the chromedriver version.
 
