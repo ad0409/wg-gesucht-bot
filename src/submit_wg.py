@@ -146,7 +146,6 @@ def submit_app(config, logger):
     if config["run_headless"]:
         chrome_options.headless = True
         chrome_options.add_argument("--window-size=1920,1080")
-        chrome_options.add_argument("--reuse-tab")
         chrome_options.add_argument("--disable-blink-features=AutomationControlled")
 
     # create the ChromeDriver object and log
